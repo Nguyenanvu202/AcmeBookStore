@@ -2,9 +2,11 @@
 @using Acme.BookStore.Authors
 @using Acme.BookStore.Localization
 @using Volo.Abp.AspNetCore.Components.Web
+@attribute [RouterTabsPageAttribute(Name: "Authors", Closeable: true)]
 @inherits BookStoreComponentBase
 @inject IAuthorAppService AuthorAppService
 @inject AbpBlazorMessageLocalizerHelper<BookStoreResource> LH
+
 <Card>
     <CardHeader>
         <Row Class="justify-content-between">

@@ -1,0 +1,11 @@
+﻿@page "/tabs"
+@inject NavigationManager navigationManager
+
+<Button Color="Color.Primary" Clicked="@TabChange">Tab1</Button>
+
+@code {
+    private async Task TabChange()
+    {
+		navigationManager.NavigateTo("/tabs/tab1");
+    }
+}

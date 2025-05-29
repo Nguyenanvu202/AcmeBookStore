@@ -38,6 +38,7 @@ public class Program
             await app.RunAsync();
             return 0;
         }
+
         catch (Exception ex)
         {
             if (ex is HostAbortedException)

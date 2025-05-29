@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
+using Volo.Abp.AspNetCore.Mvc.Libs;
 
 namespace Acme.BookStore;
 
@@ -40,6 +41,10 @@ public class Program
                         .WriteTo.Async(c => c.AbpStudio(services));
                 });
             await builder.AddApplicationAsync<BookStoreHttpApiHostModule>();
+            builder.Services.Configure<AbpMvcLibsOptions>(options =>
+            {
+                options.CheckLibs = false;
+            });
             var app = builder.Build();
             app.UseDeveloperExceptionPage(); // Only for development!
             await app.InitializeApplicationAsync();

@@ -1,5 +1,6 @@
 ﻿@page "/books"
 @attribute [Authorize(BookStorePermissions.Books.Default)]
+@attribute [RouterTabsPageAttribute(Name: "Books", Closeable: true)]
 @using Acme.BookStore.Permissions
 @using Microsoft.AspNetCore.Authorization
 @using Volo.Abp
