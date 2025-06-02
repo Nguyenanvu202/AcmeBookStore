@@ -1,0 +1,16 @@
+﻿@page "/tab"
+@inject NavigationManager navigationManager
+@attribute [RouterTabsPageAttribute(Name: "Tab", Closeable: false)]
+
+<Button Color="Color.Primary" Clicked="@Books">Books</Button>
+<Button Color="Color.Primary" Clicked="@Authors">Authors</Button>
+@code {
+	private async Task Books()
+	{
+		navigationManager.NavigateTo("/books");
+	}	
+	private async Task Authors()
+	{
+		navigationManager.NavigateTo("/authors");
+	}
+}
